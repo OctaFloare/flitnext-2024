@@ -1,10 +1,9 @@
 import Link from "next/link";
+import { DesktopLinks } from "./mobileHeader/links";
 
 export const DesktopHeader = () => <div className="hidden lg:block ">
-<nav
- className="w-full flex justify-center items-center gap-4 bg-[#C5C6C7] h-20"
- >
-    <Link href="/" className="text-2xl text-[#1F2833]">Home</Link>
-    <Link href="/movies" className="text-2xl text-[#1F2833]">Movies</Link>
+  <nav className="w-full h-12 flex justify-end items-center gap-4 bg-[#142833]
+  transition-all duration-500 ease-out opacity-75 hover:opacity-90 hover:h-16 ">
+   <DesktopLinks/>
 </nav>
 </div>
