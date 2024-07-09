@@ -4,6 +4,7 @@ import { useState } from "react"
 import { Overlay } from "./overlay";
 import { BurgerSvg } from "./burgerSvg";
 import { FlixnetSvg } from "./flixnetSvg";
+import { Links } from "./links";
 
 export const MobileHeader = () => {
     const [isOpen, setIsOpen] = useState(false);
