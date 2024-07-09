@@ -14,7 +14,7 @@ export const MobileHeader = () => {
         <button onClick={() => setIsOpen(true)}>
           <BurgerSvg />
         </button>
-        <div className="mt-2">
+        <div className="mt-3">
           <Image
             src="/flitnext-logo.png"
             alt="FlitNext Logo"
