@@ -1,6 +1,14 @@
-const HomePage = () => {
+import { Content } from "../containers/movies/content";
+import { ReactQueryProvider } from "../providers/reactQueryProvider";
 
-    return <div className="w">Home</div>
-}
+const MoviesPage = () => {
+  return (
+    <div className="w">
+      <ReactQueryProvider>
+        <Content />
+      </ReactQueryProvider>
+    </div>
+  );
+};
 
-export default HomePage
+export default MoviesPage;
