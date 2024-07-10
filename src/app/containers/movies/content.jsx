@@ -1,31 +1,24 @@
 "use client";
 
-import { useEffect } from "react";
 import { useMovies } from "../hooks/useMovies";
-import axios from "axios";
 
 export const Content = () => {
-  const movie = {
-    id: 5,
-    name: "Hobbit",
-  };
-
-  useEffect(() => {
-    axios.post("http://localhost:3000/api/movies", movie);
-  }, []);
+  const { data, error, isError, isLoading, isSuccess} = useMovies();
 
   return (
-    <>
-      {/* {isSuccess &&
-        data.data.map((movie) => (
-          <div key={`${movie.id}-${movie.name}`}>{movie.name}</div>
+    <div>
+      <h1>Movies List</h1>
+      <ul>
+        {isSuccess && data.map(movie => (
+        <li key={movie.id}>{movie.name}</li>
         ))}
+      </ul>
       {isError && (
         <div className="text-red-600">
-          Something went wrong with the movies fetch
+          {error.message}
         </div>
       )}
-      {isLoading && <div>Content is loading...</div>} */}
-    </>
+      {isLoading && <div>Content is loading...</div>}
+  </div>
   );
 };

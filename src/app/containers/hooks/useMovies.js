@@ -1,15 +1,20 @@
 import { useQuery } from "@tanstack/react-query";
+import axios from "axios";
+
+const fetchMovies = async () => {
+  const response = await axios.get('/api/movies');
+  return response.data;
+};
 
 export const useMovies = () => {
-  const { data, isError, isLoading, isSuccess } = useQuery({
-    queryKey: "getMovies",
-    queryFn: () => axios.get(""),
+  const { data, error, isError, isLoading, isSuccess } = useQuery({
+    queryKey: ['getMovies'],
+    queryFn: fetchMovies,
   });
 
-  const movies = data ? data.data : [];
-
   return {
-    data: movies,
+    data,
+    error, 
     isError,
     isLoading,
     isSuccess,
