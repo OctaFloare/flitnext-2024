@@ -1,10 +1,9 @@
-import Link from "next/link";
+import { DesktopNavbar } from "./desktopNavbar";
+import { Links } from "./links";
 
-export const DesktopHeader = () => <div className="hidden lg:block ">
-<nav
- className="w-full flex justify-center items-center gap-4 bg-[#C5C6C7] h-20"
- >
-    <Link href="/" className="text-2xl text-[#1F2833]">Home</Link>
-    <Link href="/movies" className="text-2xl text-[#1F2833]">Movies</Link>
-</nav>
+export const DesktopHeader = () => <div 
+  className="hidden lg:block backdrop-blur-lg"
+  style={{ background: 'linear-gradient(to bottom, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1))'}}
+  >
+  <DesktopNavbar links={Links} />
 </div>
