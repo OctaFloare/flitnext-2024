@@ -1,8 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
 import { useMovies } from "../hooks/useMovies";
-import axios from "axios";
 
 export const Content = () => {
   const { data, error, isError, isLoading, isSuccess} = useMovies();
