@@ -16,11 +16,13 @@ const handler = (req, res) => {
       const data = JSON.parse(fs.readFileSync(dataFilePath, "utf8"));
 
       const alreadyExists = data.some(
-        (movie) => movie.id === newData.id || movie.name === newData.name,
+        (movie) =>
+          movie.title === newData.title &&
+          movie.genres.id === newData.genres.id
       );
 
       if (alreadyExists) {
-        res.status(419).end("The movie already exists");
+        res.status(419).json({ message: "The movie already exists" });
         return;
       }
       data.push(newData);
@@ -29,7 +31,7 @@ const handler = (req, res) => {
 
       res.status(200).json(newData);
     } catch {
-      res.status(500).end("Something went wrong");
+      res.status(500).end("Something went wrong" );
     }
 
     return;
