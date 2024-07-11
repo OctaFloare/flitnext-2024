@@ -10,6 +10,7 @@ export const useMovies = () => {
   const { data, error, isError, isLoading, isSuccess } = useQuery({
     queryKey: ['getMovies'],
     queryFn: fetchMovies,
+    staleTime: 5000
   });
 
   return {
