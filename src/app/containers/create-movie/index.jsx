@@ -1,7 +1,9 @@
 'use client'
 
 import CreateMovieForm from "./createMovieForm"
-import { useCreateMovie } from "../hooks/useCreateMovies";
+import { useCreateMovie } from "../hooks/useCreateMovie";
+import DisplayError from "./displayError";
+import DisplaySuccess from "./displaySuccess";
 
 export const CreateMovie = () => {
     const { mutate, data, isSuccess, isError, error } = useCreateMovie();
@@ -11,16 +13,10 @@ export const CreateMovie = () => {
     };
       
     return (
-        <div>
-          {isError && <div className="text-red-600">{error.message}</div>}
+        <div className="flex flex-col items-center justify-center h-full w-full space-y-4">
+          {isError && <DisplayError error={error} />}
           <CreateMovieForm onSubmit={handleFormSubmit} />
-          {isSuccess && (
-            <div>
-              Newly created movie
-              <p>This is id: {data.id}</p>
-              <p>This is movie name: {data.name}</p>
-            </div>
-          )}
+          {isSuccess && <DisplaySuccess data={data} />}
         </div>
     );
 };
