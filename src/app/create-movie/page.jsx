@@ -1,10 +1,13 @@
-import { CreateMovie } from "../containers/create-movie"
+"use client"
+
+import {CreateMovie} from "@/app/containers/create-movie";
+
+
 
 const CreateMoviePage = () => {
     return <div>
-        Create Movie
         <CreateMovie />
-        </div>
+    </div>
 }
 
 export default CreateMoviePage
