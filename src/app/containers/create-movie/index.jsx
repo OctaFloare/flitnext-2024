@@ -1,7 +1,7 @@
 "use client";
 
 import { useMutation } from "@tanstack/react-query";
-import { v4 as uuidv4 } from "uuid";
+import { genres } from "./movie-data";
 import axios from "axios";
 import { Formik, Form, Field } from "formik";
 
@@ -67,12 +67,34 @@ export const CreateMovie = () => {
           });
         }}
       >
-        {({ isSubmitting }) => (
-          <Form className="flex flex-col space-y-4  items-center w-full">
+        {({ isSubmitting, setFieldValue }) => (
+          <Form className="flex flex-col space-y-4 items-center w-full">
             <Field type="text" name="title" placeholder="Title" />
             <Field type="text" name="description" placeholder="Description" />
-            <Field type="text" name="genres.id" placeholder="Genre ID" />
-            <Field type="text" name="genres.name" placeholder="Genre Name" />
+            <Field
+              as="select"
+              name="genres.id"
+              onChange={(e) => {
+                const selectedGenre = genres.find(
+                  (genre) => genre.id.toString() === e.target.value,
+                );
+                setFieldValue(
+                  "genres.id",
+                  selectedGenre ? selectedGenre.id : "",
+                );
+                setFieldValue(
+                  "genres.name",
+                  selectedGenre ? selectedGenre.name : "",
+                );
+              }}
+            >
+              <option value="">Select Genre</option>
+              {genres.map((genre) => (
+                <option key={genre.id} value={genre.id}>
+                  {genre.name}
+                </option>
+              ))}
+            </Field>
             <Field type="text" name="videoSource" placeholder="Video Source" />
             <Field type="text" name="cast.role" placeholder="Cast Role" />
             <Field type="text" name="cast.crew.id" placeholder="Crew ID" />

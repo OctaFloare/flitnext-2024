@@ -1,1 +1,19 @@
-[]
+[
+  {
+    "id": 1,
+    "title": "The Dark Knight",
+    "description": "Batman raises the stakes in his war on crime with the help of...",
+    "genres": {
+      "id": 1,
+      "name": "Action"
+    },
+    "videoSource": "dark_knight_trailer.mp4",
+    "cast": {
+      "role": "Bruce Wayne",
+      "crew": {
+        "id": "103",
+        "name": "Christian Bale"
+      }
+    }
+  }
+]
