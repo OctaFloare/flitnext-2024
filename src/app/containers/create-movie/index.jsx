@@ -1,28 +1,26 @@
 'use client'
 
-import { useMutation } from "@tanstack/react-query"
-import axios from "axios"
-
-const createMovie = async () => {
-    const response = await axios.post('/api/movies', {id: 7, name: "Dune" })
-
-    return response.data
-}
+import CreateMovieForm from "./createMovieForm"
+import { useCreateMovie } from "../hooks/useCreateMovies";
 
 export const CreateMovie = () => {
-    const { mutate, data, isSuccess, isError, error } = useMutation({
-        mutationFn: createMovie, 
-        mutationKey: ["create-movie"]
-    })
+    const { mutate, data, isSuccess, isError, error } = useCreateMovie();
 
-    return <>
-        {isError && <div className="text-red-600">{error.message}</div>}
-        <button onClick={() => mutate()}>Create movie</button>
-        {isSuccess && <div>
-            Newly created movie
-            <p>This is id: {data.id}</p>
-            <p>This is movie name: {data.name}</p>
-            </div>}
-    </>
-
-}
+    const handleFormSubmit = (values) => {
+      mutate(values);
+    };
+      
+    return (
+        <div>
+          {isError && <div className="text-red-600">{error.message}</div>}
+          <CreateMovieForm onSubmit={handleFormSubmit} />
+          {isSuccess && (
+            <div>
+              Newly created movie
+              <p>This is id: {data.id}</p>
+              <p>This is movie name: {data.name}</p>
+            </div>
+          )}
+        </div>
+    );
+};
