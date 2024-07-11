@@ -16,14 +16,22 @@ const handler = (req, res) => {
       const data = JSON.parse(fs.readFileSync(dataFilePath, "utf8"));
 
       const alreadyExists = data.some(
-        (movie) => movie.id === newData.id || movie.name === newData.name,
+        (movie) => movie.id === newData.id || movie.title === newData.title,
       );
 
       if (alreadyExists) {
         res.status(419).end("The movie already exists");
         return;
       }
-      data.push(newData);
+
+      const maxId = data.reduce((max, movie) => Math.max(max, movie.id), 0);
+
+      const newDataWithId = {
+        id: maxId + 1,
+        ...newData,
+      };
+
+      data.push(newDataWithId);
 
       fs.writeFileSync(dataFilePath, JSON.stringify(data, null, 2));
 

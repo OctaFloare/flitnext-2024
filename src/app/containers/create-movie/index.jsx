@@ -1,6 +1,7 @@
 "use client";
 
 import { useMutation } from "@tanstack/react-query";
+import { v4 as uuidv4 } from "uuid";
 import axios from "axios";
 import { Formik, Form, Field } from "formik";
 
@@ -10,6 +11,22 @@ const createMovie = async (movieData) => {
   return response.data;
 };
 
+const initialValues = {
+  title: "",
+  description: "",
+  genres: {
+    id: "",
+    name: "",
+  },
+  videoSource: "",
+  cast: {
+    role: "",
+    crew: {
+      id: "",
+      name: "",
+    },
+  },
+};
 export const CreateMovie = () => {
   const { mutate, data, isSuccess, isError, error } = useMutation({
     mutationFn: createMovie,
@@ -20,22 +37,7 @@ export const CreateMovie = () => {
     <>
       {isError && <div className="text-red-600">{error.message}</div>}
       <Formik
-        initialValues={{
-          title: "",
-          description: "",
-          genres: {
-            id: "",
-            name: "",
-          },
-          videoSource: "",
-          cast: {
-            role: "",
-            crew: {
-              id: "",
-              name: "",
-            },
-          },
-        }}
+        initialValues={initialValues}
         onSubmit={(values, { setSubmitting, resetForm }) => {
           const movieData = {
             title: values.title,
@@ -56,8 +58,8 @@ export const CreateMovie = () => {
 
           mutate(movieData, {
             onSuccess: () => {
-              setSubmitting(false);
               resetForm();
+              setSubmitting(false);
             },
             onError: () => {
               setSubmitting(false);
