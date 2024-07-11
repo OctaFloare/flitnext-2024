@@ -22,5 +22,21 @@
   {
     "id": 7,
     "name": "Dune"
+  },
+  {
+    "title": "MyFIlm",
+    "description": "Nerds Summer Practice",
+    "genres": {
+      "id": "10",
+      "name": "Animation"
+    },
+    "videoSource": "https://movie.com",
+    "cast": {
+      "role": "BradBit",
+      "crew": {
+        "id": "100",
+        "name": "Ceva aici "
+      }
+    }
   }
 ]
