@@ -2,7 +2,7 @@
 import React from "react";
 import { Formik, Form } from "formik";
 import { FormField } from "./FormField";
-import * as yup from "yup"
+import * as yup from "yup";
 
 const initialValues = {
   title: "",
@@ -46,7 +46,7 @@ const MovieForm = ({ handleSubmit }) => {
       validationSchema={validationSchema}
     >
       {({ errors }) => (
-        <Form>
+        <Form className="max-w-md mx-auto bg-white p-8 rounded-md shadow-md">
           <FormField
             label="Title"
             name="title"
@@ -89,7 +89,12 @@ const MovieForm = ({ handleSubmit }) => {
             type="text"
             error={errors.cast?.crew?.name}
           />
-          <button type="submit">Submit</button>
+          <button
+            type="submit"
+            className="w-full bg-slate-600 text-white py-2 px-4 rounded hover:bg-slate-900"
+          >
+            Submit
+          </button>
         </Form>
       )}
     </Formik>

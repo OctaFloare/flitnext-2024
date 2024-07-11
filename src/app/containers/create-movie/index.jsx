@@ -18,19 +18,19 @@ export const CreateMovie = () => {
   }
 
   return (
-    <>
+    <div className="max-w-md mx-auto bg-white p-8 rounded-md shadow-md">
       <MovieForm handleSubmit={handleMovieSubmit} />
       {isError && (
-        <div className="text-red-600">
+        <div className="text-red-600 mt-4">
           {error.response?.data?.message || "An error occurred"}
         </div>
       )}
       {isSuccess && (
-        <div>
+        <div className="text-green-600 mt-4">
           Newly created movie
           <p>Movie name: {data.title}</p>
         </div>
       )}
-    </>
+    </div>
   );
 };
