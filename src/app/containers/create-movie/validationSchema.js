@@ -8,10 +8,7 @@ export const movieValidationSchema = Yup.object().shape({
     .required("Description is required")
     .min(10, "Description must be at least 10 characters"),
   genres: Yup.object().shape({
-    id: Yup.number()
-      .required("Genre is required")
-      .positive("Genre ID must be positive"),
-    name: Yup.string().required("Genre name is required"),
+    id: Yup.number().required("Genre is required"),
   }),
   videoSource: Yup.string().required("Video source is required"),
   cast: Yup.object().shape({
