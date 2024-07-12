@@ -1,6 +1,6 @@
 'use client'
 
-import CreateMovieForm from "./createMovieForm"
+import { CreateMovieForm } from "./createMovieForm";
 import { useCreateMovie } from "../hooks/useCreateMovie";
 import DisplayError from "./displayError";
 import DisplaySuccess from "./displaySuccess";

@@ -1,29 +1,25 @@
 
 import React from 'react';
-import useSubmitMovieFormik from '../hooks/useSubmitMovieFormik';
 import '../styles/formStyle.css';
-import FormField from './formField';
+import { Formik} from 'formik';
+import { MovieForm } from './movieForm';
+import { movieFormInitialValues } from './movieFormInitialValues';
+import { movieFormValidationSchema } from './movieFormValidationSchema';
 
-const CreateMovieForm = ({ onSubmit }) => {
-  const formik = useSubmitMovieFormik(onSubmit);
+export const CreateMovieForm = ({ onSubmit }) => {
+  const handleSubmit = (values, { resetForm }) => {
+    onSubmit({ id: values.movieId, name: values.movieName });
+    resetForm();
+  };
 
   return (
     <div className="container">
-      <form onSubmit={formik.handleSubmit} className="form">
-        <FormField
-          id="movieId"
-          label="Movie Id"
-          formik={formik}
-        />
-        <FormField
-          id="movieName"
-          label="Movie Name"
-          formik={formik}
-        />
-        <button type="submit" className="button">Submit</button>
-      </form>
+      <Formik
+        initialValues={movieFormInitialValues}
+        validationSchema={movieFormValidationSchema}
+        onSubmit={handleSubmit}>
+       <MovieForm></MovieForm>
+      </Formik>
     </div>
   );
 };
-
-export default CreateMovieForm;
