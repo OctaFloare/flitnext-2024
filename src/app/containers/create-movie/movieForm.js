@@ -7,7 +7,7 @@ export const MovieForm = () =>
 <>
    <Form className="form">
         <h1>Create Movie</h1>
-        <FormField label="Movie ID:" name="movieId"/>
+        <FormField type="number" label="Movie ID:" name="movieId"/>
         <FormField label="Movie Name:" name="movieName" />
         <button className="button" type="submit">Submit</button>
     </Form>
