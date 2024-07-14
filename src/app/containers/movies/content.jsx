@@ -10,7 +10,7 @@ export const Content = () => {
       <h1>Movies List</h1>
       <ul>
         {isSuccess && data.map(movie => (
-        <li key={movie.id}>{movie.name}</li>
+        <li className="text-white" key={movie.id}>{movie.title}</li>
         ))}
       </ul>
       {isError && (
