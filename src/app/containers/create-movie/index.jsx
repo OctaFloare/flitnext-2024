@@ -1,28 +1,33 @@
-'use client'
+import { useMutation } from "@tanstack/react-query";
+import axios from "axios";
+import MovieForm from "./movieForm";
 
-import { useMutation } from "@tanstack/react-query"
-import axios from "axios"
-
-const createMovie = async () => {
-    const response = await axios.post('/api/movies', {id: 7, name: "Dune" })
-
-    return response.data
-}
+const createMovie = async (movieData) => {
+  const response = await axios.post("/api/movies", movieData);
+  return response.data;
+};
 
 export const CreateMovie = () => {
-    const { mutate, data, isSuccess, isError, error } = useMutation({
-        mutationFn: createMovie, 
-        mutationKey: ["create-movie"]
-    })
+  const { mutate : handleMovieSubmit, data, isSuccess, isError, error } = useMutation({
+    mutationFn: createMovie,
+    mutationKey: ["create-movie"],
+  });
 
-    return <>
-        {isError && <div className="text-red-600">{error.message}</div>}
-        <button onClick={() => mutate()}>Create movie</button>
-        {isSuccess && <div>
-            Newly created movie
-            <p>This is id: {data.id}</p>
-            <p>This is movie name: {data.name}</p>
-            </div>}
-    </>
 
-}
+  return (
+    <div className="max-w-md mx-auto bg-white p-8 rounded-md shadow-md">
+      <MovieForm handleSubmit={handleMovieSubmit} />
+      {isError && (
+        <div className="text-red-600 mt-4">
+          {error.response?.data?.message || "An error occurred"}
+        </div>
+      )}
+      {isSuccess && (
+        <div className="text-green-600 mt-4">
+          Newly created movie
+          <p>Movie name: {data.title}</p>
+        </div>
+      )}
+    </div>
+  );
+};
