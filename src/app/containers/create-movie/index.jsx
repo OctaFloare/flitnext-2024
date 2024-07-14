@@ -8,14 +8,11 @@ const createMovie = async (movieData) => {
 };
 
 export const CreateMovie = () => {
-  const { mutate, data, isSuccess, isError, error } = useMutation({
+  const { mutate : handleMovieSubmit, data, isSuccess, isError, error } = useMutation({
     mutationFn: createMovie,
     mutationKey: ["create-movie"],
   });
 
-  function handleMovieSubmit(data) {
-    mutate(data);
-  }
 
   return (
     <div className="max-w-md mx-auto bg-white p-8 rounded-md shadow-md">
