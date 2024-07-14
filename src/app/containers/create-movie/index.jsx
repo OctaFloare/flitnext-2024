@@ -6,14 +6,13 @@ import { CreateMovieForm } from "./createMovieForm"
 
 
 const createMovie = async (values) => {
-    console.log(values)
     const movie = {
         id: parseInt(values.id),
         title: values.title,
         description: values.description,
         genres: values.genres,
         video_source: values.video_source,
-        cast: [values.cast],
+        cast: values.cast,
       };
     const response = await axios.post('/api/movies', movie)
 
@@ -26,6 +25,10 @@ export const CreateMovie = () => {
         mutationKey: ["create-movie"]
     })
 
+    let id, title, description, video_source;
+    if (data) {
+        ({ id, title, description, video_source } = data);
+    }
     return <>
         <div className="flex items-center justify-center">
         <CreateMovieForm mutate={mutate} />
@@ -35,10 +38,10 @@ export const CreateMovie = () => {
         
         {isSuccess && <div className="py-10 text-white flex flex-col items-center bg-[#45A29E] opacity-90">
             <h2 className="font-bold text-3xl py-5">Newly created movie!</h2>
-            <p>This is the movie id: {data.id}</p>
-            <p>This is the movie name: {data.title}</p>
-            <p>This is the movie description: {data.description}</p>
-            <p>This is the movie video_source: {data.video_source}</p>
+            <p>This is the movie id: {id}</p>
+            <p>This is the movie name: {title}</p>
+            <p>This is the movie description: {description}</p>
+            <p>This is the movie video_source: {video_source}</p>
             </div>}
     </>
 
