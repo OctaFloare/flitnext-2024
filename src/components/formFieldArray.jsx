@@ -10,26 +10,26 @@ const FormFieldArray = ({ name, label, fields, values, itemStructure }) => {
                     <div>
                         {values.map((item, index) => (
                             <div key={index} className="border border-slate-300 mb-3 p-5 rounded-md">
-                                {fields.map((field, fieldIndex) => {
-                                    if (field.type === 'array') {
+                                {fields.map(({type, name: fieldName, label, fields, itemStructure, placeholder}, fieldIndex) => {
+                                    if (type === 'array') {
                                         return (
                                             <FormFieldArray
                                                 key={fieldIndex}
-                                                name={`${name}.${index}.${field.name}`}
-                                                label={field.label}
-                                                fields={field.fields}
-                                                values={item[field.name]}
-                                                itemStructure={field.itemStructure}
+                                                name={`${name}.${index}.${fieldName}`}
+                                                label={label}
+                                                fields={fields}
+                                                values={item[fieldName]}
+                                                itemStructure={itemStructure}
                                             />
                                         );
                                     } else {
                                         return (
                                             <FormField
                                                 key={fieldIndex}
-                                                name={`${name}.${index}.${field.name}`}
-                                                label={field.label}
-                                                placeholder={field.placeholder}
-                                                type={field.type}
+                                                name={`${name}.${index}.${fieldName}`}
+                                                label={label}
+                                                placeholder={placeholder}
+                                                type={type}
                                             />
                                         );
                                     }
