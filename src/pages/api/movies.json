@@ -1,26 +1,236 @@
 [
   {
     "id": 1,
-    "name": "Interstellar"
+    "title": "Inception",
+    "description": "A mind-bending thriller where dreams are the ultimate weapon.",
+    "genres": [
+      {
+        "id": 1,
+        "name": "Science Fiction"
+      }
+    ],
+    "cast": [
+      {
+        "role": "Lead",
+        "crew": [
+          {
+            "id": 1,
+            "name": "Christopher Nolan"
+          }
+        ]
+      }
+    ],
+    "video_source": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
   },
   {
     "id": 2,
-    "name": "Avatar"
+    "title": "The Dark Knight",
+    "description": "Batman faces off against the Joker in a battle for Gotham City.",
+    "genres": [
+      {
+        "id": 2,
+        "name": "Action"
+      },
+      {
+        "id": 3,
+        "name": "Crime"
+      }
+    ],
+    "cast": [
+      {
+        "role": "Supporting",
+        "crew": [
+          {
+            "id": 2,
+            "name": "Christopher Nolan"
+          }
+        ]
+      }
+    ],
+    "video_source": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4"
   },
   {
     "id": 3,
-    "name": "Lord of the Rings"
+    "title": "Pulp Fiction",
+    "description": "The lives of two mob hitmen, a boxer, and a pair of diner bandits intertwine.",
+    "genres": [
+      {
+        "id": 3,
+        "name": "Crime"
+      }
+    ],
+    "cast": [
+      {
+        "role": "Lead",
+        "crew": [
+          {
+            "id": 3,
+            "name": "Quentin Tarantino"
+          }
+        ]
+      }
+    ],
+    "video_source": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
   },
   {
     "id": 4,
-    "name": "Titanic"
+    "title": "The Shawshank Redemption",
+    "description": "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.",
+    "genres": [
+      {
+        "id": 4,
+        "name": "Drama"
+      }
+    ],
+    "cast": [
+      {
+        "role": "Lead",
+        "crew": [
+          {
+            "id": 4,
+            "name": "Frank Darabont"
+          }
+        ]
+      }
+    ],
+    "video_source": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4"
   },
   {
     "id": 5,
-    "name": "Hobbit"
+    "title": "Forrest Gump",
+    "description": "The presidencies of Kennedy and Johnson, the Vietnam War, the Watergate scandal and other historical events unfold from the perspective of an Alabama man with an IQ of 75.",
+    "genres": [
+      {
+        "id": 5,
+        "name": "Drama"
+      }
+    ],
+    "cast": [
+      {
+        "role": "Lead",
+        "crew": [
+          {
+            "id": 5,
+            "name": "Robert Zemeckis"
+          }
+        ]
+      }
+    ],
+    "video_source": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4"
+  },
+  {
+    "id": 6,
+    "title": "The Matrix",
+    "description": "A computer hacker learns from mysterious rebels about the true nature of his reality and his role in the war against its controllers.",
+    "genres": [
+      {
+        "id": 6,
+        "name": "Science Fiction"
+      }
+    ],
+    "cast": [
+      {
+        "role": "Lead",
+        "crew": [
+          {
+            "id": 6,
+            "name": "The Wachowskis"
+          }
+        ]
+      }
+    ],
+    "video_source": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4"
   },
   {
     "id": 7,
-    "name": "Dune"
+    "title": "Fight Club",
+    "description": "An insomniac office worker and a devil-may-care soap maker form an underground fight club that evolves into something much, much more.",
+    "genres": [
+      {
+        "id": 7,
+        "name": "Drama"
+      }
+    ],
+    "cast": [
+      {
+        "role": "Lead",
+        "crew": [
+          {
+            "id": 7,
+            "name": "David Fincher"
+          }
+        ]
+      }
+    ],
+    "video_source": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4"
+  },
+  {
+    "id": 8,
+    "title": "The Godfather",
+    "description": "The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son.",
+    "genres": [
+      {
+        "id": 8,
+        "name": "Crime"
+      }
+    ],
+    "cast": [
+      {
+        "role": "Lead",
+        "crew": [
+          {
+            "id": 8,
+            "name": "Francis Ford Coppola"
+          }
+        ]
+      }
+    ],
+    "video_source": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4"
+  },
+  {
+    "id": 9,
+    "title": "The Lord of the Rings: The Fellowship of the Ring",
+    "description": "A meek Hobbit from the Shire and eight companions set out on a journey to destroy the powerful One Ring and save Middle-earth from the Dark Lord Sauron.",
+    "genres": [
+      {
+        "id": 9,
+        "name": "Fantasy"
+      }
+    ],
+    "cast": [
+      {
+        "role": "Lead",
+        "crew": [
+          {
+            "id": 9,
+            "name": "Peter Jackson"
+          }
+        ]
+      }
+    ],
+    "video_source": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/SubaruOutbackOnStreetAndDirt.mp4"
+  },
+  {
+    "id": 10,
+    "title": "Star Wars: Episode IV - A New Hope",
+    "description": "Luke Skywalker joins forces with a Jedi Knight, a cocky pilot, a Wookiee, and two droids to save the galaxy from the Empire's world-destroying battle station, while also attempting to rescue Princess Leia from the mysterious Darth Vader.",
+    "genres": [
+      {
+        "id": 10,
+        "name": "Science Fiction"
+      }
+    ],
+    "cast": [
+      {
+        "role": "Lead",
+        "crew": [
+          {
+            "id": 10,
+            "name": "George Lucas"
+          }
+        ]
+      }
+    ],
+    "video_source": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4"
   }
 ]

@@ -1,15 +1,15 @@
 'use client'
 
-import { useMutation } from "@tanstack/react-query"
-import axios from "axios"
-import {FieldArray, Form, Formik} from "formik";
-import {FormField} from "@/components/formField";
+import { FormField } from "@/components/formField";
 import FormFieldArray from "@/components/formFieldArray";
+import { useMutation } from "@tanstack/react-query";
+import axios from "axios";
+import { FieldArray, Form, Formik } from "formik";
 import * as Yup from "yup";
 
 const initialValues = {
     id: 0,
-    name: '',
+    title: '',
     description: '',
     genres: [{ id: 0, name: '' }],
     video_source: '',
@@ -17,8 +17,8 @@ const initialValues = {
 };
 
 const validationSchema = Yup.object().shape({
-    id: Yup.number().required('Title is required'),
-    name: Yup.string().required('Title is required'),
+    id: Yup.number().required('Id is required'),
+    title: Yup.string().required('Title is required'),
     description: Yup.string().required('Description is required'),
     genres: Yup.array().of(
         Yup.object().shape({
@@ -64,7 +64,7 @@ export const CreateMovie = () => {
                 <Form className={"max-w-md mx-auto bg-gray-50 p-5 m-10 rounded-md mb-3"}>
                     <p className="text-black text-center font-semibold mb-2 text-2xl">CREATE MOVIE</p>
                     <FormField name={"id"} label={"Movie ID"} placeholder={"Id"} type={"number"}/>
-                    <FormField name={"name"} label={"Name"} placeholder={"Name"} type={"text"}/>
+                    <FormField name={"title"} label={"Title"} placeholder={"Title"} type={"text"}/>
                     <FormField name={"description"} label={"Description"} placeholder={"Description"} type={"text"}/>
 
                     <FormFieldArray
