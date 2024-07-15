@@ -3,7 +3,7 @@ import { Crew } from "./crew";
 import { Genres } from "./genres";
 
 export const Content = ({data}) => {
-    const { id, title, description, genres, cast, video_source: videoSource } = data;
+    const { id, title, description, genres, cast } = data;
 
     return <div>
         <h2>{title}</h2>
