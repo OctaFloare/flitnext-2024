@@ -4,7 +4,7 @@ import { Genres } from "./genres";
 
 export const Content = ({data}) => {
     const { id, title, description, genres, cast, video_source: videoSource } = data;
-    
+    console.log(data + "din content")
     return <div>
         <h2>{title}</h2>
         <div>{description}</div>
