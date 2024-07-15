@@ -1,4 +1,4 @@
-import { Video } from "../containers/play";
+import { Video } from "@/app/containers/play";
 
 const PlayPage = () => <Video />
 
