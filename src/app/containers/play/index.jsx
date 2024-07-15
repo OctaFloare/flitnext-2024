@@ -17,7 +17,6 @@ export const Video = () => {
     }
 
     if(isSuccess && data){
-        console.log("data: ", data)
         return <div className="flex justify-center items-center h-full">
         <video className="w-[600px] h-[400px]" controls>
             <source src={data.video_source} type="video/mp4"></source>
