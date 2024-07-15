@@ -1,16 +1,16 @@
 'use client'
 
-import {useVideoUrl} from "./hooks/fetchVideoUrl";
+import { useMovie } from "../movie/hooks/useMovie";
 import { useParams } from 'next/navigation';
 
 
 export const Video = () => {
     const params = useParams();
     const { id } = params
-    const { data, error, isError, isLoading, isSuccess } = useVideoUrl(id)
+    const { data, error, isError, isLoading, isSuccess } = useMovie(id)
 
     const videoUrl = data?.video_source;
-    
+
     if(isLoading) return <div>Loading...</div>
 
     if(isError) return <div>{error.message}</div>
