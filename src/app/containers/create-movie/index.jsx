@@ -3,8 +3,9 @@
 import {Formik} from "formik";
 import useCreateMovie from "@/app/containers/hooks/useCreateMovie";
 import {validationSchema} from "@/app/containers/create-movie/validationSchema";
-import {CreateMovieInfoMessage} from "@/app/containers/create-movie/createMovieInfoMessage";
 import {MovieForm} from "@/app/containers/create-movie/movieForm";
+import {ErrorDisplay} from "@/app/containers/create-movie/errorDisplay";
+import {SuccessDisplay} from "@/app/containers/create-movie/successDisplay";
 
 const initialValues = {
     id: 0,
@@ -27,7 +28,8 @@ export const CreateMovie = () => {
             {({ values }) => (
                 <div>
                     <MovieForm values={values}/>
-                    {data && <CreateMovieInfoMessage isError={isError} isSuccess={isSuccess} error={error} data={data} />}
+                    {isError && <ErrorDisplay errorMessage={error.message} />}
+                    {isSuccess && <SuccessDisplay data={data} />}
                 </div>
             )}
         </Formik>
