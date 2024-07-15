@@ -1,11 +1,9 @@
 import Link from "next/link";
-import { useVideoContext } from "../play/context";
 import { Crew } from "./crew";
 import { Genres } from "./genres";
 
 export const Content = ({data}) => {
-    const { title, description, genres, cast, video_source: videoSource } = data;
-    const { setVideoUrl } = useVideoContext();
+    const { id, title, description, genres, cast } = data;
 
     return <div>
         <h2>{title}</h2>
@@ -15,6 +13,6 @@ export const Content = ({data}) => {
             <div>Role: {castMember.role}</div>
             <Crew crew={castMember.crew} />
         </div>)}
-        <Link href={"/play"} onClick={() => setVideoUrl(videoSource)}>Watch Movie</Link>
+        <Link href={`/play/${id}`}>Watch Movie</Link>
     </div>
 }
