@@ -20,7 +20,8 @@
         ]
       }
     ],
-    "video_source": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+    "video_source": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+    "photo": "https://m.media-amazon.com/images/I/81p+xe8cbnL._AC_SY679_.jpg"
   },
   {
     "id": 2,
@@ -47,7 +48,8 @@
         ]
       }
     ],
-    "video_source": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4"
+    "video_source": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
+    "photo": "https://m.media-amazon.com/images/I/71pVZHfM3FL._AC_SY679_.jpg"
   },
   {
     "id": 3,
@@ -70,7 +72,8 @@
         ]
       }
     ],
-    "video_source": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
+    "video_source": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
+    "photo": "https://m.media-amazon.com/images/I/51B6H1BMg6L._AC_SY679_.jpg"
   },
   {
     "id": 4,
@@ -93,7 +96,8 @@
         ]
       }
     ],
-    "video_source": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4"
+    "video_source": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
+    "photo": "https://m.media-amazon.com/images/I/51NiGlapXlL._AC_.jpg"
   },
   {
     "id": 5,
@@ -116,7 +120,8 @@
         ]
       }
     ],
-    "video_source": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4"
+    "video_source": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
+    "photo": "https://m.media-amazon.com/images/I/61zUbZmA5XL._AC_SY679_.jpg"
   },
   {
     "id": 6,
@@ -139,7 +144,8 @@
         ]
       }
     ],
-    "video_source": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4"
+    "video_source": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4",
+    "photo": "https://m.media-amazon.com/images/I/51EG732BV3L._AC_.jpg"
   },
   {
     "id": 7,
@@ -162,7 +168,8 @@
         ]
       }
     ],
-    "video_source": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4"
+    "video_source": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4",
+    "photo": "https://m.media-amazon.com/images/I/51v5ZpFyaFL._AC_.jpg"
   },
   {
     "id": 8,
@@ -185,7 +192,8 @@
         ]
       }
     ],
-    "video_source": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4"
+    "video_source": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4",
+    "photo": "https://m.media-amazon.com/images/I/51x5ZyqgYxL._AC_.jpg"
   },
   {
     "id": 9,
@@ -208,7 +216,8 @@
         ]
       }
     ],
-    "video_source": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/SubaruOutbackOnStreetAndDirt.mp4"
+    "video_source": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/SubaruOutbackOnStreetAndDirt.mp4",
+    "photo": "https://m.media-amazon.com/images/I/51Qvs9i5a%2BL._AC_.jpg"
   },
   {
     "id": 10,
@@ -231,6 +240,7 @@
         ]
       }
     ],
-    "video_source": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4"
+    "video_source": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4",
+    "photo": "https://m.media-amazon.com/images/I/71xZmhAoY-L._AC_SY679_.jpg"
   }
 ]
