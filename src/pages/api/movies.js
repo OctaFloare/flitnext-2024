@@ -16,7 +16,7 @@ const handler = (req, res) => {
       const data = JSON.parse(fs.readFileSync(dataFilePath, "utf8"));
 
       const alreadyExists = data.some(
-        (movie) => movie.id === newData.id || movie.name === newData.name,
+        (movie) => movie.id === newData.id || movie.title === newData.title,
       );
 
       if (alreadyExists) {

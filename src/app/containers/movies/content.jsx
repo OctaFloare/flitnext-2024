@@ -16,6 +16,9 @@ export const Content = () => {
         </div>
       )}
       {isLoading && <div>Content is loading...</div>}
+      <Link href="/create-movie">
+          <button className="px-4 py-2 text-white rounded bg-[#45A29E] hover:bg-[#2A615F]">Create New Movie</button>
+      </Link>
   </div>
   );
 };
