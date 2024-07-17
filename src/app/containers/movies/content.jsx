@@ -6,9 +6,14 @@ import { useMovies } from "../hooks/useMovies";
 import { MovieGrid } from "./movieGrid";
 
 export const Content = () => {
-  const { settings } = useSettingsContext();
-  
-  const { data, error, isError, isLoading, isSuccess} = useMovies();
+
+  const { data, error, isError, isLoading, isSuccess } = useMovies({
+    term: null,
+    first: 10,
+    after: null,
+    last: null,
+    before: null,
+  });
 
   return (
     <div>
