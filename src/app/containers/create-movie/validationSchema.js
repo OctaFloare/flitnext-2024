@@ -11,6 +11,7 @@ export const validationSchema = Yup.object().shape({
         })
     ),
     video_source: Yup.string().required('Video source is required'),
+    image_source: Yup.string().required('Image source is required'),
     cast: Yup.array().of(
         Yup.object().shape({
             role: Yup.string().required('Role is required'),

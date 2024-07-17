@@ -9,9 +9,9 @@ export const Content = () => {
 
   const { data, error, isError, isLoading, isSuccess } = useMovies({
     term: null,
-    first: 10,
+    first: null,
     after: null,
-    last: null,
+    last: 5,
     before: null,
   });
 

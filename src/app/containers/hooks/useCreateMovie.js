@@ -1,16 +1,6 @@
-import { useMutation } from "@tanstack/react-query";
-import axios from "axios";
+import { useGraphQLMutation } from "@/hooks/useGraphqlMutation";
+import { CREATE_MOVIE_MUTATION } from "@/components/graphql/mutations";
 
-const createMovie = async (values) => {
-    const response = await axios.post('/api/movies', values)
-    return response.data
-}
-
-const useCreateMovie = () => {
-    return useMutation({
-        mutationFn: createMovie,
-        mutationKey: ["create-movie"]
-    });
-}
-
-export default useCreateMovie;
+export const useCreateMovie = () => {
+    return useGraphQLMutation('create-movie', CREATE_MOVIE_MUTATION);
+};

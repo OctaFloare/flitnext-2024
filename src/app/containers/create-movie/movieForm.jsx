@@ -36,6 +36,7 @@ export const MovieForm = ({values}) =>
             />
 
             <FormField name={"video_source"} label={"Video Source"} placeholder={"Video Source"} type={"text"} />
+            <FormField name={"image_source"} label={"Image Source"} placeholder={"Image Source"} type={"text"} />
 
             <FormFieldArray
                 name="cast"

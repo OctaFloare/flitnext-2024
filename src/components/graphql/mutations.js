@@ -2,7 +2,7 @@
 import { gql } from 'graphql-request';
 
 export const CREATE_MOVIE_MUTATION = gql`
-  mutation CreateMovie($createMovieDto: CreateMovieInput!) {
+  mutation CreateMovie($createMovieDto: CreateMovieDtoInput!) {
     createMovie(createMovieDto: $createMovieDto) {
       id
       title
