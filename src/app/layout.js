@@ -1,4 +1,5 @@
 import { Header } from "@/components/header";
+import { getSettings } from "@/settings/getSettings";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { Providers } from "./providers";
@@ -11,12 +12,14 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+  const settings = getSettings();
+
   return (
     <html lang="en" className="h-full">
       <body
         className={`${inter.className} bg-[url('../assets/new-background.jpg')] h-full bg-center bg-cover bg-repeat`}
       >
-        <Providers>
+        <Providers settings={settings}>
           <Header />
           {children}
         </Providers>

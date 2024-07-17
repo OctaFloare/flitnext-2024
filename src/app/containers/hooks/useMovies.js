@@ -1,4 +1,4 @@
-import { useGraphQLQuery } from "@/hooks/useGraphqlQuery";
+import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 
 const fetchMovies = async () => {
@@ -40,7 +40,10 @@ query GetMovies ($term: String, $first: Int, $last: Int, $before: String, $after
 `
 
 export const useMovies = () => {
-  const { data, error, isError, isLoading, isSuccess } = useGraphQLQuery('get-movies', GET_MOVIES);
+  const { data, error, isError, isLoading, isSuccess } = useQuery({
+    queryKey: ['get-movies'],
+    queryFn: fetchMovies 
+  })
 
   return {
     data,

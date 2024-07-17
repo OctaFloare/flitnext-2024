@@ -1,9 +1,13 @@
 "use client";
 
+import { useSettingsContext } from "@/app/providers/settingsContext";
+import Link from "next/link";
 import { useMovies } from "../hooks/useMovies";
-import {MovieGrid} from "@/app/containers/movies/movieGrid";
+import { MovieGrid } from "./movieGrid";
 
 export const Content = () => {
+  const { settings } = useSettingsContext();
+  
   const { data, error, isError, isLoading, isSuccess} = useMovies();
 
   return (

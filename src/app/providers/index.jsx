@@ -1,12 +1,15 @@
 'use client'
 
 import { ReactQueryProvider } from "./reactQueryProvider";
+import { SettingsContext } from "./settingsContext";
 
-export const Providers = ({ children }) => {
+export const Providers = ({ children, settings }) => {
 
   return (
-    <ReactQueryProvider>
+    <SettingsContext.Provider value={{ settings }}>
+      <ReactQueryProvider>
         {children}
-    </ReactQueryProvider>
+      </ReactQueryProvider>
+    </SettingsContext.Provider>
   );
 };
