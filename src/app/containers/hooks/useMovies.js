@@ -7,17 +7,16 @@ const fetchMovies = async () => {
 };
 
 const GET_MOVIES = `
-query GetMovies ($term: String, $first: Int, $last: Int, $before: String, $after: String){
-  movies(term: $term, first: $first, last: $last, before: $before, after: $after) {
-    totalCount
+query {
+  movies(first: 15) {
     edges {
       cursor
       node {
-        description
         id
-        imageUrl
         title
+        description
         videoSource
+        imageUrl
         genres {
           id
           name
@@ -37,7 +36,7 @@ query GetMovies ($term: String, $first: Int, $last: Int, $before: String, $after
     }
   }
 }
-`
+`;
 
 export const useMovies = () => {
   const { data, error, isError, isLoading, isSuccess } = useQuery({
@@ -47,7 +46,7 @@ export const useMovies = () => {
 
   return {
     data,
-    error, 
+    error,
     isError,
     isLoading,
     isSuccess,
