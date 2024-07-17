@@ -2,10 +2,9 @@
 
 import { FormField } from "@/components/formField";
 import FormFieldArray from "@/components/formFieldArray";
-import { useMutation } from "@tanstack/react-query";
-import axios from "axios";
 import { FieldArray, Form, Formik } from "formik";
 import * as Yup from "yup";
+import { useCreateMovie } from "./hooks/useCreateMovie";
 
 const initialValues = {
     id: 0,
@@ -40,17 +39,21 @@ const validationSchema = Yup.object().shape({
     ),
 });
 
-const createMovie = async (values) => {
-    const response = await axios.post('/api/movies', values)
+const createMovieFromValues = async (values) => {
+    const inputTypeObj = {
+        title: values.title,
+        description: values.description,
+        videoSource: values.video_source,
+        imageUrl: "nmk",
+        genreIDs: values.genres.map(g => g.id),
 
-    return response.data
+    }
+
+    const { data, error, isError, isLoading, isSuccess } = useCreateMovie(ceva)
+    return data
 }
 
 export const CreateMovie = () => {
-    const { mutate, data, isSuccess, isError, error } = useMutation({
-        mutationFn: createMovie, 
-        mutationKey: ["create-movie"]
-    })
 
     return <>
         <Formik
@@ -72,10 +75,9 @@ export const CreateMovie = () => {
                         label="Genres"
                         fields={[
                             { name: 'id', label: 'Genre ID', placeholder: 'Genre ID', type: 'number' },
-                            { name: 'name', label: 'Genre Name', placeholder: 'Genre Name', type: 'text' },
                         ]}
                         values={values.genres}
-                        itemStructure={{ id: '', name: '' }}
+                        itemStructure={{ id: ''}}
                     />
 
                     <FormField name={"video_source"} label={"Video Source"} placeholder={"Video Source"} type={"text"} />

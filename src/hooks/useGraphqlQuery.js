@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { GraphQLClient } from 'graphql-request';
 
-const port = "5173"
+const port = "5209"
 
 const endpoint = `http://localhost:${port}/graphql`
 

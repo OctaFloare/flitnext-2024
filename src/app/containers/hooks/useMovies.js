@@ -1,10 +1,4 @@
 import { useGraphQLQuery } from "@/hooks/useGraphqlQuery";
-import axios from "axios";
-
-const fetchMovies = async () => {
-  const response = await axios.get('/api/movies');
-  return response.data;
-};
 
 const GET_MOVIES = `
 query GetMovies ($term: String, $first: Int, $last: Int, $before: String, $after: String){
